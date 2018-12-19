@@ -97,7 +97,6 @@
                         .attr('class', 'd3-tip')
                         .offset([-10, 0])
                         .html(function(d) {
-
                             if (_this.tooltipText || _this.rowHeaderTextToolTip) {
                                 if (d[_this.rowHeaderLabel]) {
                                   return  _this.rowHeaderTextToolTip.call(null, d)
@@ -221,24 +220,7 @@
                                 .attr('text-anchor', 'left')
                                 .style('cursor', 'pointer')
                                 .text(function(d, i) {
-                                  if (d[_this.rowHeaderLabel].length > 16) {
-                                    var teamMemberName = d[_this.rowHeaderLabel];
-                                    teamMemberName = teamMemberName.split(" ")
-                                    var trimmedFirstName = teamMemberName[0];
-                                    var trimmedSecondName = teamMemberName[1];
-                                    if (trimmedFirstName.length > 8) {
-                                      trimmedFirstName = trimmedFirstName.substring(0,8);
-                                    }
-                                    if (trimmedSecondName.length > 8) {
-                                      trimmedSecondName = trimmedSecondName.substring(0,8);
-                                    }
-
-                                    teamMemberName = trimmedFirstName + " " + trimmedSecondName;
-                                    return teamMemberName;
-                                  }else {
-                                    return d[_this.rowHeaderLabel];
-                                  }
-
+                                  return d[_this.rowHeaderLabel];
                                 })
 
             if (!this.disableRowHeadersHover) {
