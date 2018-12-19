@@ -9,4 +9,7 @@ The component can be used as a Common JS module, an AMD module, or a global. The
 ## API
 
 ### D3punchcard()
-## testing
+
+
+### CHANGES
+- adding a tooltip feature on header labels
