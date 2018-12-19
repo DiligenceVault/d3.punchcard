@@ -98,6 +98,7 @@
                         .offset([-10, 0])
                         .html(function(d) {
                             if (_this.tooltipText || _this.rowHeaderTextToolTip) {
+                                // if row hdeaer label is hovered call rowHeaderTextToolTip
                                 if (d[_this.rowHeaderLabel]) {
                                   return  _this.rowHeaderTextToolTip.call(null, d)
                                 }else {
@@ -225,6 +226,7 @@
 
             if (!this.disableRowHeadersHover) {
                 textHeaders.on('mouseover', function(data){
+                  // call tip method on mouseover
                   if (data) {
                     tip.show(data)
                   }
@@ -233,6 +235,7 @@
                   d3.select(g).selectAll('text.value').style('display', 'block');
                 });
                 textHeaders.on('mouseout', function(){
+                  // Hide tooltip on mouseout
                   tip.hide()
                   var g = d3.select(this).node().parentNode;
                   d3.select(g).selectAll('circle').style('display', 'block');
